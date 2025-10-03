@@ -1,13 +1,17 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from "cors";
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/users.routes.js';
 import seedRoles from './utils/seedRoles.js';
-
 dotenv.config();
 
 const app = express();
+
+// Habilitar CORS para todos
+app.use(cors());
+
 app.use(express.json());
 
 // Rutas
